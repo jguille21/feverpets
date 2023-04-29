@@ -1,1 +1,2 @@
 export const SET_PET_SORTING = 'SET_PET_SORTING'
+export const SET_PET_PAGE = 'SET_PET_PAGE'
