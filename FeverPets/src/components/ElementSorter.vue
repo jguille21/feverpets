@@ -19,6 +19,17 @@ export default {
     paramsToSortBy: {
       type: Array,
       required: true
+    },
+    defaultSorting: {
+      type: Object,
+      default: null
+    }
+  },
+  mounted() {
+    if (this.defaultSorting) {
+      const { sortBy, order } = this.defaultSorting
+      this.currentSorting = sortBy
+      this.sortingOrder = order
     }
   },
   methods: {

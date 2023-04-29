@@ -1,9 +1,11 @@
 <script>
+import { mapMutations } from 'vuex'
+import { SET_PET_SORTING } from '../store/mutations.js'
 import ApiPets from '../services/api-pets.js'
 import ElementSorter from './ElementSorter.vue'
 import PetTile from './PetTile.vue'
 
-const MOCK_LOADING_TIME = 1000
+const MOCK_LOADING_TIME = 0
 
 export default {
   components: {
@@ -13,18 +15,29 @@ export default {
   data() {
     return {
       pets: null,
+      currentPetListSorting: null,
       paramsToSortBy: ['weight', 'length', 'height', 'name', 'kind']
     }
   },
   mounted() {
-    ApiPets.getAllPets().then(response => {
-      setTimeout( () => { this.pets = response.data }, MOCK_LOADING_TIME)
-    })
+    const { currentPetListSorting } = this.$store.state
+    if (currentPetListSorting) {
+      this.currentPetListSorting = currentPetListSorting
+      this.changeSorting(currentPetListSorting)
+    } else {
+      ApiPets.getAllPets().then(response => {
+        setTimeout(() => { this.pets = response.data }, MOCK_LOADING_TIME)
+      })
+    }
   },
   methods: {
+    ...mapMutations({
+      setPetSorting: SET_PET_SORTING
+    }),
     changeSorting({ sortBy, order }) {
+      this.setPetSorting({ sortBy, order })
       ApiPets.getPetsSortedBy(sortBy, order).then(response => {
-        setTimeout( () => { this.pets = response.data }, MOCK_LOADING_TIME)
+        setTimeout(() => { this.pets = response.data }, MOCK_LOADING_TIME)
       })
     },
     navigateToPetPage(id) {
@@ -40,6 +53,7 @@ export default {
       v-if="pets"
       title="Sort pets by:"
       :paramsToSortBy="paramsToSortBy"
+      :defaultSorting="currentPetListSorting"
       @changeSorting="changeSorting"
     />
     <div v-if="pets" class="pet-carousel">

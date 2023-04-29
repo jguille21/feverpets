@@ -1,0 +1,1 @@
+export const SET_PET_SORTING = 'SET_PET_SORTING'
