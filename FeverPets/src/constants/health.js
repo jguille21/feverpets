@@ -1,7 +1,7 @@
 const HEALTH_RANGES = {
   UNHEALTHY: 'unhealthy',
   HEALTHY: 'healthy',
-  VERY_HEALTHY: 'very healthy'
+  VERY_HEALTHY: 'veryHealthy'
 }
 
 const HEALTH_THRESHOLDS = {

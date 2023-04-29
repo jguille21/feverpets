@@ -4,7 +4,7 @@ import PetsList from '../components/PetsList.vue'
 
 <template>
   <main>
-    <p>Welcome to Fever Pets! Check out our awesome kitties and doggos down below, and be on the lookout for new pets showing up later on!</p>
+    <p>{{ $t('home.welcome') }}</p>
     <PetsList />
   </main>
 </template>

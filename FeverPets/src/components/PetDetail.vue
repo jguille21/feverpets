@@ -31,22 +31,22 @@ export default {
       return this.petData.description
     },
     getPetKind() {
-      return this.petData.kind
+      return this.$t(`pet.kinds.${this.petData.kind}`)
     },
     getPetWeight() {
-      return `${this.petData.weight} grams`
+      return `${this.petData.weight} ${this.$t('pet.measures.grams')}`
     },
     getPetHeight() {
-      return `${this.petData.height} centimeters`
+      return `${this.petData.height} ${this.$t('pet.measures.centimeters')}`
     },
     getPetLength() {
-      return `${this.petData.length} centimeters`
+      return `${this.petData.length} ${this.$t('pet.measures.centimeters')}`
     },
     getPetRemainingLives() {
       return this.petData['number_of_lives']
     },
     getPetHealth() {
-      return getPetHealthTier(this.petData)
+      return this.$t(`pet.health.${getPetHealthTier(this.petData)}`)
     }
   }
 }
@@ -57,20 +57,20 @@ export default {
     v-if="petData"
     class="pet-detail"
   >
-  <p>Welcome to {{ petData.name }}'s page!</p>
+  <p>{{ $t('pet.welcome', petData.name) }}</p>
   <div class="pet-data">
     <div>
       <img class="photo" :src="getPetPhoto" />
     </div>
     <div class="details">
-      <span>Name: {{ getPetName }}</span>
-      <span>Kind: {{ getPetKind }}</span>
-      <span>Weight: {{ getPetWeight }}</span>
-      <span>Height: {{ getPetHeight }}</span>
-      <span>Length: {{ getPetLength }}</span>
-      <span v-if="isCat">Remaining lives: {{ getPetRemainingLives }}</span>
-      <span>Health: {{ getPetHealth }}</span>
-      <span>Description:</span>
+      <span>{{ $t('pet.traits.name') }}: {{ getPetName }}</span>
+      <span>{{ $t('pet.traits.kind') }}: {{ getPetKind }}</span>
+      <span>{{ $t('pet.traits.weight') }}: {{ getPetWeight }}</span>
+      <span>{{ $t('pet.traits.height') }}: {{ getPetHeight }}</span>
+      <span>{{ $t('pet.traits.length') }}: {{ getPetLength }}</span>
+      <span v-if="isCat">{{ $t('pet.traits.lives') }}: {{ getPetRemainingLives }}</span>
+      <span>{{ $t('pet.traits.health') }}: {{ getPetHealth }}</span>
+      <span>{{ $t('pet.traits.description') }}:</span>
       <span>{{ getPetDescription }}</span>
     </div>
   </div>

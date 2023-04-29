@@ -14,7 +14,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Sort by: '
+      default: ''
     },
     paramsToSortBy: {
       type: Array,
@@ -61,9 +61,9 @@ export default {
 
 <template>
   <div class="element-sorter">
-    <span>{{ title }}</span>
+    <span v-if="title">{{ title }}</span>
     <div class="sort-params" v-for="param in paramsToSortBy" :key="param">
-      <button :class="getParamClass(param)" @click="changeSorting(param)">{{ param }}</button>
+      <button :class="getParamClass(param)" @click="changeSorting(param)">{{ $t(`pet.traits.${param}`) }}</button>
     </div>
     <img
       v-if="showClearSorting"

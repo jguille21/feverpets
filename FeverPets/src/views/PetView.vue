@@ -5,7 +5,7 @@ import PetDetail from '../components/PetDetail.vue'
 
 <template>
   <main>
-    <p><RouterLink :to="{ name: 'home' }">Go back</RouterLink></p>
+    <p><RouterLink :to="{ name: 'home' }">{{ $t('pet.buttons.back') }}</RouterLink></p>
     <PetDetail />
   </main>
 </template>

@@ -79,7 +79,7 @@ export default {
   <div class="pet-list">
     <ElementSorter
       v-if="pets"
-      title="Sort pets by:"
+      :title="$t('sorter.title')"
       :paramsToSortBy="paramsToSortBy"
       :defaultSorting="currentPetListSorting"
       @changeSorting="changeSorting"
@@ -102,7 +102,7 @@ export default {
         @changePage="changePage"
       />
     </div>
-    <div v-else>Loading pets!</div>
+    <div v-else>{{ $t('home.loading') }}</div>
   </div>
 </template>
 
