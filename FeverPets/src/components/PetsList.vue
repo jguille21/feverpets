@@ -26,6 +26,9 @@ export default {
       ApiPets.getPetsSortedBy(sortBy, order).then(response => {
         setTimeout( () => { this.pets = response.data }, MOCK_LOADING_TIME)
       })
+    },
+    navigateToPetPage(id) {
+      this.$router.push({name: 'pet', params: { id }})
     }
   }
 }
@@ -45,7 +48,10 @@ export default {
         v-for="pet in pets"
         :key="pet.id"
       >
-        <PetTile :pet-data="pet" />
+        <PetTile 
+          :pet-data="pet"
+          @click="navigateToPetPage(pet.id)"
+        />
       </div>
     </div>
     <div v-else>Loading pets!</div>
