@@ -18,5 +18,10 @@ export default defineConfig({
       'store': fileURLToPath(new URL('./src/store', import.meta.url)),
       'views': fileURLToPath(new URL('./src/views', import.meta.url))
     }
+  },
+  test: {
+    environment: 'happy-dom',
+    include: ['**/*.spec.js'],
+    globals: true
   }
 })
