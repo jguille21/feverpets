@@ -39,10 +39,10 @@ export default {
     padding: 16px;
 
     .logo {
+      max-width: 100%;
       height: 100%;
       cursor: pointer;
     }
   }
 }
-
 </style>

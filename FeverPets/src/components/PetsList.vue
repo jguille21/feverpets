@@ -110,14 +110,15 @@ export default {
           @click="navigateToPetPage(pet.id)"
         />
       </div>
-      <ElementPaginator
-        class="paginator"
-        :pages="pages"
-        :currentPage="currentPage"
-        @changePage="changePage"
-      />
     </div>
-    <div v-else-if="spinnerImage"><LoadingSpinner :image="spinnerImage" /></div>
+    <ElementPaginator
+      v-if="pets"
+      class="paginator"
+      :pages="pages"
+      :currentPage="currentPage"
+      @changePage="changePage"
+    />
+    <div v-if="!pets && spinnerImage"><LoadingSpinner :image="spinnerImage" /></div>
   </div>
 </template>
 
@@ -129,15 +130,28 @@ export default {
 .pet-carousel {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
   .pet-tile-container {
     margin: 16px 0px;
   }
+}
 
-  .paginator {
-    width: 180px;
-    margin: 16px auto;
+.paginator {
+  width: 180px;
+  margin: 16px auto;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 700px;
+  left: 50%;
+}
+
+@media all and (max-width: 425px) {
+  .loading-spinner {
+    top: unset;
+    bottom: 60px;
   }
 }
 </style>

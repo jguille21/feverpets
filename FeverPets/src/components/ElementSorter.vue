@@ -115,4 +115,14 @@ export default {
     bottom: 4px;
   }
 }
+
+@media all and (max-width: 425px) {
+  .element-sorter {
+    flex-direction: column;
+
+    .sort-params, .clear-sorting {
+      margin: 6px auto;
+    }
+  }
+}
 </style>

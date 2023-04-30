@@ -80,7 +80,7 @@ export default {
 
 <style scoped lang="scss">
 .pet-detail {
-  width: 1280px;
+  width: 100%;
   margin: auto;
 
   p {
@@ -102,6 +102,31 @@ export default {
       max-width: 500px;
       span {
         display: block;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .pet-detail {
+    .pet-data {
+      flex-direction: column;
+
+      .photo-container {
+        width: unset;
+        max-width: 100%;
+        margin: auto;
+      }
+
+      .photo{
+        width: 100%;
+        margin: 0 auto 16px;
+        max-width: unset;
+      }
+      
+      .details {
+        margin: 0 auto 16px;
+        max-width: unset;
       }
     }
   }

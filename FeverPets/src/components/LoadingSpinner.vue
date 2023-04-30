@@ -18,9 +18,6 @@ export default {
 
 <style scoped lang="scss">
 .loading-spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 200px;
   margin:-100px 0 0 -100px;
   img {

@@ -13,6 +13,9 @@ import PetDetail from '../components/PetDetail.vue'
 <style scoped lang="scss">
 @import '@/assets/styles/button.scss';
 main {
+  max-width: 1280px;
+  margin: 0 auto;
+
   button {
     display: block;
     margin: 32px auto;

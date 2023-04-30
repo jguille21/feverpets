@@ -108,4 +108,15 @@ export default {
     }
   }
 }
+
+@media all and (max-width: 425px) {
+  .pet-tile {
+    width: 300px;
+    height: 300px;
+
+    .photo {
+      height: 270px;
+    }
+  }
+}
 </style>

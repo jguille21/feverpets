@@ -18,12 +18,12 @@ import PetsList from '../components/PetsList.vue'
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .main-container {
   .banner {
     width: 100%;
     height: 120px;
-    background: no-repeat url('src/assets/images/background.jpg');
+    background: no-repeat url('@/assets/images/background.jpg');
     background-position: center 30%;
     background-size: cover;
   }
@@ -39,6 +39,12 @@ import PetsList from '../components/PetsList.vue'
         margin-right: 24px;
       }
     }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  main {
+    padding: 0 32px;
   }
 }
 </style>
