@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { vi } from 'vitest'
 import BrowserUtils from 'helpers/browser-utils.js'
 
