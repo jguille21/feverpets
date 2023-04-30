@@ -82,7 +82,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@import 'src/assets/styles/button.scss';
+@import 'assets/styles/button.scss';
 
 .element-sorter {
   display: flex;

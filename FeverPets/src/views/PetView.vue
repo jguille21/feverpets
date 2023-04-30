@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import PetDetail from '../components/PetDetail.vue'
+import PetDetail from 'components/PetDetail.vue'
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import PetDetail from '../components/PetDetail.vue'
 </template>
 
 <style scoped lang="scss">
-@import '@/assets/styles/button.scss';
+@import 'assets/styles/button.scss';
 main {
   max-width: 1280px;
   margin: 0 auto;

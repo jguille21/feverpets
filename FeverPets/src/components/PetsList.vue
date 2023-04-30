@@ -1,7 +1,7 @@
 <script>
 import { mapMutations } from 'vuex'
-import { SET_PET_SORTING, SET_PET_PAGE } from '../store/mutations.js'
-import ApiPets from '../services/api-pets.js'
+import { SET_PET_SORTING, SET_PET_PAGE } from 'store/mutations.js'
+import ApiPets from 'services/api-pets.js'
 import ElementSorter from './ElementSorter.vue'
 import ElementPaginator from './ElementPaginator.vue'
 import PetTile from './PetTile.vue'

@@ -1,8 +1,8 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import { GET_PET_OF_THE_DAY } from '../store/getters.js'
-import { PERSIST_PET_OF_THE_DAY } from '../store/actions.js'
-import ApiPets from '../services/api-pets.js'
+import { GET_PET_OF_THE_DAY } from 'store/getters.js'
+import { PERSIST_PET_OF_THE_DAY } from 'store/actions.js'
+import ApiPets from 'services/api-pets.js'
 
 export default {
   data() {
@@ -55,5 +55,5 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@import 'src/assets/styles/button.scss';
+@import 'assets/styles/button.scss';
 </style>

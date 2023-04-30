@@ -1,6 +1,6 @@
 <script setup>
-import PetOfTheDay from '../components/PetOfTheDay.vue'
-import PetsList from '../components/PetsList.vue'
+import PetOfTheDay from 'components/PetOfTheDay.vue'
+import PetsList from 'components/PetsList.vue'
 </script>
 
 <template>
@@ -23,7 +23,7 @@ import PetsList from '../components/PetsList.vue'
   .banner {
     width: 100%;
     height: 120px;
-    background: no-repeat url('@/assets/images/background.jpg');
+    background: no-repeat url('assets/images/background.jpg');
     background-position: center 30%;
     background-size: cover;
   }

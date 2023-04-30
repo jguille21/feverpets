@@ -11,7 +11,7 @@ import {
 import {
   GET_PET_OF_THE_DAY
 } from './getters.js'
-import BrowserUtils from '../helpers/browser-utils.js'
+import BrowserUtils from 'helpers/browser-utils.js'
 
 export default createStore({
   state: {

@@ -29,7 +29,7 @@ export default {
 </template>
 
 <style lang="scss">
-@import './assets/styles/base.scss';
+@import 'assets/styles/base.scss';
 
 #app {
   font-weight: normal;

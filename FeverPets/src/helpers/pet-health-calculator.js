@@ -1,5 +1,5 @@
-import PET_KINDS from '../constants/pet-kinds.js'
-import { HEALTH_RANGES, HEALTH_THRESHOLDS} from '../constants/health.js'
+import PET_KINDS from 'constants/pet-kinds.js'
+import { HEALTH_RANGES, HEALTH_THRESHOLDS} from 'constants/health.js'
 
 export function getPetHealthTier(petData) {
   const { weight, height, length } = petData

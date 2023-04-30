@@ -1,7 +1,7 @@
 <script>
-import ApiPets from '../services/api-pets.js'
-import PET_KINDS from '../constants/pet-kinds.js'
-import { getPetHealthTier } from '../helpers/pet-health-calculator.js'
+import ApiPets from 'services/api-pets.js'
+import PET_KINDS from 'constants/pet-kinds.js'
+import { getPetHealthTier } from 'helpers/pet-health-calculator.js'
 
 export default {
   data() {

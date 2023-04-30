@@ -1,12 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
-import { LOAD_STORED_STATE } from './store/actions.js'
-import BrowserUtils from './helpers/browser-utils.js'
-import t from './plugins/translation.js'
-import stringsES from './constants/strings/es.js'
-import stringsEN from './constants/strings/en.js'
+import store from 'store'
+import { LOAD_STORED_STATE } from 'store/actions.js'
+import BrowserUtils from 'helpers/browser-utils.js'
+import t from 'plugins/translation.js'
+import stringsES from 'constants/strings/es.js'
+import stringsEN from 'constants/strings/en.js'
 
 const app = createApp({
   extends: App,
