@@ -44,7 +44,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="pet-of-the-day">
     <button
       :class="buttonClass"
       @click="showPetOfTheDay"

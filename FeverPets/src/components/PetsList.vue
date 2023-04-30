@@ -137,7 +137,7 @@ export default {
 
   .paginator {
     width: 180px;
-    margin: 32px auto;
+    margin: 16px auto;
   }
 }
 </style>

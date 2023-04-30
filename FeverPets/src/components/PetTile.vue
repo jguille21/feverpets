@@ -99,8 +99,9 @@ export default {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: $color-background, $alpha: 0.7);
-    padding: 16px;
+    background-color: rgba($color: $color-background, $alpha: 0.8);
+    padding: 60px 90px;
+    line-height: 32px;
 
     span {
       display: block;

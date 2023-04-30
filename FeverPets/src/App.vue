@@ -32,14 +32,11 @@ export default {
 @import './assets/styles/base.scss';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-
   font-weight: normal;
 
   header {
     height: 3.5rem;
-    padding: 8px;
+    padding: 16px;
 
     .logo {
       height: 100%;

@@ -59,7 +59,7 @@ export default {
   >
   <p>{{ $t('pet.welcome', petData.name) }}</p>
   <div class="pet-data">
-    <div>
+    <div class="photo-container">
       <img class="photo" :src="getPetPhoto" />
     </div>
     <div class="details">
@@ -70,6 +70,7 @@ export default {
       <span>{{ $t('pet.traits.length') }}: {{ getPetLength }}</span>
       <span v-if="isCat">{{ $t('pet.traits.lives') }}: {{ getPetRemainingLives }}</span>
       <span>{{ $t('pet.traits.health') }}: {{ getPetHealth }}</span>
+      <br />
       <span>{{ $t('pet.traits.description') }}:</span>
       <span>{{ getPetDescription }}</span>
     </div>
@@ -79,6 +80,9 @@ export default {
 
 <style scoped lang="scss">
 .pet-detail {
+  width: 1280px;
+  margin: auto;
+
   p {
     text-align: center;
     margin: 32px 0px;
@@ -86,14 +90,19 @@ export default {
 
   .pet-data {
     display: flex;
-    justify-content: space-evenly;
 
-    .photo {
-      max-width: 500px;
+    .photo-container {
+      width: 560px;
+      .photo {
+        max-width: 500px;
+      }
     }
 
-    .details span {
-      display: block;
+    .details {
+      max-width: 500px;
+      span {
+        display: block;
+      }
     }
   }
 }

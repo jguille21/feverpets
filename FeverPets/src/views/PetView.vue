@@ -5,7 +5,17 @@ import PetDetail from '../components/PetDetail.vue'
 
 <template>
   <main>
-    <p><RouterLink :to="{ name: 'home' }">{{ $t('pet.buttons.back') }}</RouterLink></p>
     <PetDetail />
+    <button><RouterLink :to="{ name: 'home' }">{{ $t('pet.buttons.back') }}</RouterLink></button>
   </main>
 </template>
+
+<style scoped lang="scss">
+@import '@/assets/styles/button.scss';
+main {
+  button {
+    display: block;
+    margin: 32px auto;
+  }
+}
+</style>
