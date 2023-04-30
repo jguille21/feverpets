@@ -7,6 +7,8 @@ It was a fun project to tackle, and while it didn't presented any major roadbloc
 First time using vite! Is was fine, specially since adding some extra configuration for the testing was quite easy.
 Also, first time using vitest. A bit different than jest in some aspects, but it was fun trying out something new.
 
+Page's language depends on the user's browser configuration, but you can overwrite it with the lang URL paramter (?lang=es, ?lang=whatever else for english since it's the default)
+
 Navigation speed could be improved by storing the pets data on the user's browser local storage, and doing pagination and sorting by hand but, since you guys provided an API with pagination and sorting options, I decided to use those instead.
 
 I tried to keep some of Fever's look and feel by using font and colors taken from Fever's web page.
