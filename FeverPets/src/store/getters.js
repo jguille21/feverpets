@@ -1,0 +1,1 @@
+export const GET_PET_OF_THE_DAY = 'GET_PET_OF_THE_DAY'

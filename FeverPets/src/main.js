@@ -2,12 +2,18 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import { LOAD_STORED_STATE } from './store/actions.js'
 import BrowserUtils from './helpers/browser-utils.js'
 import t from './plugins/translation.js'
 import stringsES from './constants/strings/es.js'
 import stringsEN from './constants/strings/en.js'
 
-const app = createApp(App)
+const app = createApp({
+  extends: App,
+  created() {
+    this.$store.dispatch(LOAD_STORED_STATE)
+  }
+})
 
 app.use(router)
 app.use(store)

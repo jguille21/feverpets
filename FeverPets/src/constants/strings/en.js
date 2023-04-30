@@ -1,6 +1,9 @@
 export default {
   home: {
     welcome: 'Welcome to Fever Pets! Check out our awesome kitties and doggos down below, and be on the lookout for new pets showing up later on!',
+    checkOutPetDay: 'Here at Fever Pets, every day is pet day, so check out our pet of the day by clicking on the button!',
+    checkOutPets: '...or if that isn\'t enough, check out ALL our pets:',
+    petOfTheDay: 'Pet of the day!',
     loading: 'Loading pets!'
   },
   pet: {
