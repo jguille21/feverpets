@@ -71,7 +71,7 @@ export default {
       ApiPets.getPetsPaginatedAndSorted(this.currentPage, PETS_BY_PAGE, sortBy, order).then(response => {
         setTimeout(() => {
           this.pets = response.data
-          this.pages = response.headers['x-total-count'] / PETS_BY_PAGE // TODO round
+          this.pages = Math.ceil(response.headers['x-total-count'] / PETS_BY_PAGE)
         }, MOCK_LOADING_TIME)
       })
     },
