@@ -5,29 +5,40 @@ import ApiPets from '../services/api-pets.js'
 import ElementSorter from './ElementSorter.vue'
 import ElementPaginator from './ElementPaginator.vue'
 import PetTile from './PetTile.vue'
+import LoadingSpinner from './LoadingSpinner.vue'
 
-const MOCK_LOADING_TIME = 0
+const MOCK_LOADING_TIME = 500
 const PETS_BY_PAGE = 6
 
 export default {
   components: {
     ElementSorter,
     ElementPaginator,
-    PetTile
+    PetTile,
+    LoadingSpinner
   },
   data() {
     return {
       pets: null,
       pages: 0,
-      currentPage: 1,
+      currentPage: 0,
       currentPetListSorting: {
         sortBy: null,
         order: null
       },
-      paramsToSortBy: ['weight', 'length', 'height', 'name', 'kind']
+      paramsToSortBy: ['weight', 'length', 'height', 'name', 'kind'],
+      spinnerImages: [
+        'src/assets/images/spinners/spinner-1.png',
+        'src/assets/images/spinners/spinner-2.png',
+        'src/assets/images/spinners/spinner-3.png',
+        'src/assets/images/spinners/spinner-4.png',
+        'src/assets/images/spinners/spinner-5.png',
+        'src/assets/images/spinners/spinner-6.png'
+      ],
+      spinnerImage: null
     }
   },
-  mounted() {
+  created() {
     const { currentPetListSorting, currentPetPage } = this.$store.state
     if (currentPetPage) {
       this.changePage(currentPetPage)
@@ -35,8 +46,6 @@ export default {
     if (currentPetListSorting) {
       this.changeSorting(currentPetListSorting)
     }
-
-    this.retrievePetsFromApi()
   },
   methods: {
     ...mapMutations({
@@ -44,10 +53,12 @@ export default {
       setPetPage: SET_PET_PAGE
     }),
     changeSorting({ sortBy, order }) {
+      this.pets = null
       this.currentPetListSorting = { sortBy, order }
       this.setPetSorting({ sortBy, order })
     },
     changePage(page) {
+      this.pets = null
       this.currentPage = page
       this.setPetPage(page)
     },
@@ -55,6 +66,7 @@ export default {
       this.$router.push({name: 'pet', params: { id }})
     },
     retrievePetsFromApi() {
+      this.setNewImageForSpinner()
       const { sortBy, order } = this.currentPetListSorting
       ApiPets.getPetsPaginatedAndSorted(this.currentPage, PETS_BY_PAGE, sortBy, order).then(response => {
         setTimeout(() => {
@@ -62,6 +74,9 @@ export default {
           this.pages = response.headers['x-total-count'] / PETS_BY_PAGE // TODO round
         }, MOCK_LOADING_TIME)
       })
+    },
+    setNewImageForSpinner() {
+      this.spinnerImage = this.spinnerImages[Math.floor(Math.random() * this.spinnerImages.length)]
     }
   },
   watch: {
@@ -78,7 +93,7 @@ export default {
 <template>
   <div class="pet-list">
     <ElementSorter
-      v-if="pets"
+      :enabled="!!pets"
       :title="$t('sorter.title')"
       :paramsToSortBy="paramsToSortBy"
       :defaultSorting="currentPetListSorting"
@@ -102,7 +117,7 @@ export default {
         @changePage="changePage"
       />
     </div>
-    <div v-else>{{ $t('home.loading') }}</div>
+    <div v-else-if="spinnerImage"><LoadingSpinner :image="spinnerImage" /></div>
   </div>
 </template>
 

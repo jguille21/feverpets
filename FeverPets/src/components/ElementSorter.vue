@@ -12,6 +12,10 @@ export default {
     }
   },
   props: {
+    enabled: {
+      type: Boolean,
+      default: false
+    },
     title: {
       type: String,
       default: ''
@@ -48,12 +52,15 @@ export default {
       if (this.currentSorting === param) {
         paramClass = this.sortingOrder
       }
+      if (!this.enabled) {
+        paramClass += ' disabled'
+      }
       return paramClass
     }
   },
   computed: {
     showClearSorting() {
-      return this.currentSorting !== null
+      return this.enabled && this.currentSorting !== null
     }
   }
 }

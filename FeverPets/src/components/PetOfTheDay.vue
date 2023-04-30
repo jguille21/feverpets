@@ -20,7 +20,10 @@ export default {
   computed: {
     ...mapGetters({
       getPetOfTheDay: GET_PET_OF_THE_DAY
-    })
+    }),
+    buttonClass() {
+      return !this.pets ? 'disabled' : ''
+    }
   },
   methods: {
     ...mapActions({
@@ -42,7 +45,12 @@ export default {
 
 <template>
   <div>
-    <button v-if="pets" @click="showPetOfTheDay">{{ $t('home.petOfTheDay') }}</button>
+    <button
+      :class="buttonClass"
+      @click="showPetOfTheDay"
+    >
+      {{ $t('home.petOfTheDay') }}
+    </button>
   </div>
 </template>
 
