@@ -1,0 +1,26 @@
+@import 'colors.scss';
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: $color-text;
+  background: $color-background;
+  line-height: 1.6;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $color-text;
+  text-decoration: none;
+}

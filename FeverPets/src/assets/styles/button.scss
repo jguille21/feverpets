@@ -1,0 +1,17 @@
+@import 'colors.scss';
+
+button {
+  border: 1px solid white;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  padding: 4px 8px;
+  cursor: pointer;
+  background-color: $color-background-darker;
+  user-select: none;
+
+  &.disabled {
+    color: gray;
+    pointer-events: none;
+  }
+}
